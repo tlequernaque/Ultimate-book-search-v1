@@ -68,3 +68,5 @@ const resolvers = {
           },
     }
 }
+
+model.exports = resolvers
