@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 import {  useQuery ,useMutation } from "@apollo/client";
@@ -22,7 +22,7 @@ const SavedBooks = () => {
     }
 
     try {
-      const data = await removeBook({
+      const {data} = await removeBook({
         variables: {bookId}
       });
 
@@ -30,7 +30,7 @@ const SavedBooks = () => {
         throw new Error('something went wrong!');
       }
 
-      const updatedUser = await response.json();
+      // const updatedUser = await response.json();
       
       // upon success, remove book's id from localStorage
       removeBookId(bookId);

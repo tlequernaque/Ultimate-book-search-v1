@@ -69,4 +69,4 @@ const resolvers = {
     }
 }
 
-model.exports = resolvers
+module.exports = resolvers
